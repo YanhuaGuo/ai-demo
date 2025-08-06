@@ -1,4 +1,4 @@
-package com.example.demo.ai;
+package com.example.demo.service;
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.UserMessage;
@@ -21,9 +21,20 @@ public class AiHealthService {
     @Resource
     private ChatModel qwenChatModel;
 
+    //简单聊天
     public String chart(String message){
         //封装消息
         UserMessage userMessage = UserMessage.from(message);
+        //调用
+        ChatResponse chatResponse =qwenChatModel.chat(userMessage);
+        AiMessage aiMessage = chatResponse.aiMessage();
+
+        log.info(aiMessage.toString());
+        return aiMessage.text();
+    }
+
+    //多模态
+    public String modalities(UserMessage userMessage){
         //调用
         ChatResponse chatResponse =qwenChatModel.chat(userMessage);
         AiMessage aiMessage = chatResponse.aiMessage();
