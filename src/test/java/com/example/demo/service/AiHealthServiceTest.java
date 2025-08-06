@@ -17,7 +17,7 @@ class AiHealthServiceTest {
 
     @Test
     void chart() {
-        aiHealthService.chart("你好，我是java程序员andy");
+        aiHealthService.chart("你好，我是java程序员andy，最近腰部不适，不知道是什么原因");
     }
 
 
