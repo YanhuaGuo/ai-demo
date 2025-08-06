@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Person;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,5 +24,13 @@ class AIDoctorServiceTest {
         System.out.println(chat);
         chat = aiDoctorService.chat("这和我的职业有多大关系？");
         System.out.println(chat);
+    }
+
+    @Test
+    void chatStructured() {
+        Person chat = aiDoctorService.chatStructured("你好，我是java程序员tom，最近加班较多，肩颈部不舒服，不知道是什么情况");
+        System.out.println(chat.name());
+        System.out.println(chat.career());
+        System.out.println(chat.suggestionList());
     }
 }

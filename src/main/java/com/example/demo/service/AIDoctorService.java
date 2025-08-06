@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Person;
 import dev.langchain4j.service.SystemMessage;
 
 /**
@@ -12,4 +13,7 @@ public interface AIDoctorService {
 
     @SystemMessage(fromResource = "system-prompts.txt")
     String chat(String userMessage);
+
+    @SystemMessage(fromResource = "system-prompts.txt")
+    Person chatStructured(String userMessage);
 }
