@@ -39,12 +39,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
+        <!--千问大模型sdk-->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-community-dashscope-spring-boot-starter</artifactId>
             <version>1.2.0-beta8</version>
+        </dependency>
+        <!--ai sever-->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>1.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
